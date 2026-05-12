@@ -8,28 +8,29 @@ public class LandingPage {
 
     WebDriver driver;
 
-    By search=By.cssSelector("input.search-keyword");
-    By product=By.cssSelector("input.product-name");
+    By search = By.cssSelector("input.search-keyword");
+    By product = By.xpath("//div[@class='product']/h4[@class='product-name']");   ////div[@class='product']/h4
     By topDeals = By.linkText("Top Deals");
 
     public LandingPage(WebDriver driver) {
-        this.driver=driver;
+        this.driver = driver;
     }
 
 
-    public void searchProduct(String productName)
-    {
-        driver.findElement(search).sendKeys(productName);
-        }
-    public void getProduct()
-    {
-       driver.findElement(product).getText();
+    public void searchProduct(String name) {
+        driver.findElement(search).clear();
+        driver.findElement(search).sendKeys(name);
+    }
+
+    public String getProduct() {
+        return driver.findElement(product).getText();
+
 
     }
-        public void clickOnTopDeals()
-        {
-            driver.findElement(topDeals).click();
-        }
+
+    public void clickOnTopDeals() {
+        driver.findElement(topDeals).click();
+    }
 
 
 }

@@ -3,14 +3,14 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
-    WebDriver driver;
-    public LandingPage landingPage;
+    static WebDriver driver;
+    public static LandingPage landingPage;
     public OfferPage offerPage;
 
     public PageObjectManager(WebDriver driver){
     this.driver=driver;
     }
-    public LandingPage getLandingPage()
+    public static LandingPage getLandingPage()
     {
         landingPage=new LandingPage(driver);
         return landingPage;

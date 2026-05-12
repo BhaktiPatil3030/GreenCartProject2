@@ -17,7 +17,7 @@ public class Utility {
     {
        Set<String> allIds=driver.getWindowHandles();
        ArrayList<String> al=new ArrayList<String>(allIds);
-       driver.switchTo().window(al.get(0));
+       driver.switchTo().window(al.get(1));
 
     }
 

@@ -1,22 +1,25 @@
 package utils;
 
-import org.openqa.selenium.WebDriver;
 import pageObjects.OfferPage;
 import pageObjects.PageObjectManager;
+
+import java.io.IOException;
+
 
 public class TestContext {
     public Base base;
     public PageObjectManager pageObjectManager;
     public Utility utility;
     public OfferPage offerPage;
-    public String productOnOffersPage;
+    public String productOnLandingPage;
 
-    public TestContext(WebDriver driver)
-    {
-        base=new Base();
-        pageObjectManager=new PageObjectManager(base.driver);
-        utility=new Utility(base.driver);
 
+    public TestContext() throws IOException {
+        base = new Base();
+        pageObjectManager = new PageObjectManager(base.webDriverManager());
+        utility = new Utility(base.webDriverManager());
+        //productOnLandingPage = "Tomato";
+//productOnLandingPage = PageObjectManager.getLandingPage().getProduct();
 
     }
 

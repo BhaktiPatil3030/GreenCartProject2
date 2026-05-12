@@ -25,7 +25,7 @@ public class LandingPageStepDefination {
         //search > getText > clickon offers
         LandingPage landingPage = testContext.pageObjectManager.getLandingPage();
         landingPage.searchProduct(productName);
-        testContext.productOnLandingPage = landingPage.getProduct();
+        testContext.productOnLandingPage = landingPage.getProduct().split("-")[0].trim();
 
         System.out.println(testContext.productOnLandingPage + ": Product extracted from landing page ");
 
